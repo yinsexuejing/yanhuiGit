@@ -1,0 +1,61 @@
+//
+//  ZhongjianMacros.pch
+//  ZhongJianMalliOS
+//
+//  Created by 段 on 2017/10/31.
+//  Copyright © 2017年 apple. All rights reserved.
+//
+
+#ifndef ZhongjianMacros_pch
+#define ZhongjianMacros_pch
+
+
+#define JPushAppKey  @"4c4a4dfcb0acdaa52da3a5e5"
+#define JPushState  YES//NO
+#define KWIDTH       [[UIScreen mainScreen] bounds].size.width
+#define KHEIGHT      [[UIScreen mainScreen] bounds].size.height
+#define zjTextColor  [UIColor colorWithHexString:@"6493ff"]
+#define redTextColor [UIColor colorWithHexString:@"ff3a00"]
+#define lightBlackTextColor [UIColor colorWithHexString:@"444444"]
+#define lightgrayTextColor [UIColor colorWithHexString:@"999999"]
+//#define HTTPUrl  @"http://192.168.1.245:8080"
+#define HTTPUrl @"https://appnew.zhongjianmall.com"
+/******************    TabBar          *************/
+#define MallClassKey   @"rootVCClassString"
+#define MallTitleKey   @"title"
+#define MallImgKey     @"imageName"
+#define MallSelImgKey  @"selectedImageName"
+#define WS(weakSelf)    __weak typeof (&*self) weakSelf = self
+
+#if DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"\nfunction:%s line:%d content:%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
+
+
+#import <AlipaySDK/AlipaySDK.h>
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
+#import "Masonry.h"
+#import "UIColor+DjyRGB.h"
+#import "CheckNumber.h"
+#import "MBProgressHUD.h"
+#import "AFNetworking.h"
+#import "HttpRequest.h"
+#import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
+#import "LoginViewController.h"
+#import "DXTabBarViewController.h"
+#import "TZImagePickerController.h"
+#import "NOHaveViewController.h"
+// 引入JPush功能所需头文件
+#import "JPUSHService.h"
+// iOS10注册APNs所需头文件
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* ZhongjianMacros_pch */
